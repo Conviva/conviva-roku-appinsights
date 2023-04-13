@@ -64,7 +64,7 @@ custom_data_json = {
   "identifier3":true
 }
 
-m.global.appTracker.convivaAppTracker.trackCustomEvent =  {
+m.global.appTracker.CAT.trackCustomEvent =  {
     name: "CustomEvent", ' Name. / Description of the screen'
     data: formatJSON(custom_data_json)
 }
