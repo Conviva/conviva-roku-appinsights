@@ -30,24 +30,19 @@ Trackers are initialized by setting the `init` property with configuration of th
 
 ```brs
 m.global.appTracker.init = {
-    subject: {
-        appId: "<<YOUR_APP_ID_ADVISED_BY_Conviva>>",
-        convivaCustomerKey: "YOUR_CUSTOMER_KEY_ADVISED_BY_Conviva",
-    },
-    namespace: "CAT",
-    network: {
-        collector: "<<YOUR_APPGW_URL_ADVISED_BY_CONVIVA>>",
-    }
+    appName: "<<YOUR_APP_ID_ADVISED_BY_Conviva>>",
+    customerKey: "YOUR_CUSTOMER_KEY_ADVISED_BY_Conviva"
 }
 ```
 
 ### Report Screen View for tracking in-app screen navigations.
 ```brs
-m.global.appTracker.CAT.screenView = {
-    id: "videoscene", 'Optional' ' A unique ID to identify the screen'
-    name: "Video Gallery Screen" ' Name. / Description of the screen'
+m.global.appTracker.screenView = {
+    id: "videoscene", 'Mandatory' ' A unique ID to identify the screen'
+    name: "Video Gallery Screen" ' Mandatory' 'Name. / Description of the screen'
 }
 ```
+Note: Roku App sensor does not auto collect screen view events and hence there is no information stored about previous screen information
 
 ### Custom event tracking to track your application specific events and state changes
 Use trackCustomEvent() API to track all kinds of events. This API provides 2 fields to describe the tracked events.
@@ -64,8 +59,10 @@ custom_data_json = {
   "identifier3":true
 }
 
-m.global.appTracker.CAT.trackCustomEvent =  {
+m.global.appTracker.trackCustomEvent =  {
     name: "CustomEvent", ' Name. / Description of the screen'
     data: formatJSON(custom_data_json)
 }
 ```
+
+Note: Remote config feature is not available yet in Roku app sensor. Hence, the events cannot be blocked yet from Conviva Pulse Data Modelling dashboards
