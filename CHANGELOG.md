@@ -1,4 +1,4 @@
-# v0.2.3 (26/MAR/2023)
+# v0.2.3 (26/MAR/2024)
 - Added API to set UserID / ViewerId
 
 # v0.2.2 (28/SEP/2023)
