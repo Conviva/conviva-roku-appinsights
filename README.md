@@ -44,6 +44,11 @@ m.global.appTracker.screenView = {
 ```
 Note: Roku App sensor does not auto collect screen view events and hence there is no information stored about previous screen information
 
+### Set the user id (viewer id)
+```brs
+m.global.appTracker.setUserId = "<replace_me_by_the_userId>"
+```
+
 ### Custom event tracking to track your application specific events and state changes
 Use trackCustomEvent() API to track all kinds of events. This API provides 2 fields to describe the tracked events.
 
